@@ -1,10 +1,4 @@
-package org.danlee.functionality;
-
-import org.danlee.models.PhoneBook;
-import org.danlee.models.Person;
-
-import java.util.Arrays;
-import java.util.UUID;
+package functionality;
 
 public class ContactFinder {
 //    private final PhoneBook phoneBook;

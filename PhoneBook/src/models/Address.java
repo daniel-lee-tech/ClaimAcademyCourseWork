@@ -1,4 +1,4 @@
-package org.danlee.models;
+package models;
 
 import java.util.UUID;
 

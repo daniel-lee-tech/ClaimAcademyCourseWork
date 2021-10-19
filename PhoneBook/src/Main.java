@@ -1,7 +1,5 @@
-package org.danlee;
-
-import org.danlee.controllers.PhoneBookController;
-import org.danlee.models.PhoneBook;
+import controllers.PhoneBookController;
+import models.PhoneBook;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {

@@ -1,8 +1,7 @@
-package org.danlee.models;
+package models;
 
-import org.danlee.controllers.PhoneBookController;
-import org.danlee.functionality.*;
-import org.danlee.models.*;
+import functionality.*;
+import models.*;
 
 import java.util.Arrays;
 

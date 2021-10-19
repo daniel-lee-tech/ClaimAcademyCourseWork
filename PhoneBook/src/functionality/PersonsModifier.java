@@ -1,9 +1,6 @@
-package org.danlee.functionality;
+package functionality;
 
-import org.danlee.models.PhoneBook;
-import org.danlee.models.Person;
-
-import java.util.Arrays;
+import models.PhoneBook;
 
 public class PersonsModifier {
     private final PhoneBook phoneBook;

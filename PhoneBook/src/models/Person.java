@@ -1,4 +1,4 @@
-package org.danlee.models;
+package models;
 
 
 import java.util.UUID;
@@ -42,6 +42,16 @@ public class Person{
         return phoneNumbers;
     }
 
+    public boolean hasPhoneNumber(double phoneNumber) {
+        for (PhoneNumber number: this.phoneNumbers) {
+            if (number.getNumber() == phoneNumber) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public void outputInfo() {
         System.out.println("=============");
         System.out.println("Full Name: " + getFullName());
@@ -73,5 +83,25 @@ public class Person{
         }
 
         return phoneNumbers.toString();
+    }
+
+    public String infoSummary() {
+        StringBuilder output = new StringBuilder();
+        output
+                .append(this.getId())
+                .append("\n")
+                .append(this.getFullName())
+                .append("\n")
+                .append(this.getAddressString())
+                .append("\nPhone Numbers:\n")
+                .append(this.getAllNumbersAsString())
+                .append("\n")
+                .append("===========================================\n");
+
+        return output.toString();
+    }
+
+    public String briefSummary() {
+        return this.getFullName() + " " + this.getAddressString();
     }
 }

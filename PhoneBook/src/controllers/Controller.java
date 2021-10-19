@@ -1,4 +1,4 @@
-package org.danlee.controllers;
+package controllers;
 
 import java.util.Scanner;
 
@@ -14,8 +14,8 @@ public class Controller {
         System.out.println("1 to add new contact");
         System.out.println("2 to find a single contact");
         System.out.println("3 to find many contacts by a condition");
-        System.out.println("3 to edit contact");
-        System.out.println("4 to delete contact");
+        System.out.println("4 to edit contact");
+        System.out.println("5 to delete contact");
         System.out.println("Type 'exit' without quotes to cancel the program at anytime");
         System.out.println("========= MENU END ===========");
     }

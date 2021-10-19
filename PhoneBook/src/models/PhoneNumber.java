@@ -1,4 +1,4 @@
-package org.danlee.models;
+package models;
 
 import java.util.UUID;
 
@@ -12,7 +12,7 @@ public class PhoneNumber {
 
     private UUID id;
     private Person owner;
-    private int number;
+    private double number;
     private NumberType type;
 
     public Person getOwner() {
@@ -23,7 +23,7 @@ public class PhoneNumber {
         this.owner = owner;
     }
 
-    public int getNumber() {
+    public double getNumber() {
         return number;
     }
 
