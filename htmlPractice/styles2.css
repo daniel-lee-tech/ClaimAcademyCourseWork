@@ -1,0 +1,21 @@
+.green-background {
+    background-color: rgb(53, 122, 99);
+}
+
+.white-text {
+    color: white;
+}
+
+.font-family-sans-serif {
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.font-family-times-new-roman {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.blue-text {
+    color: blue;
+}
