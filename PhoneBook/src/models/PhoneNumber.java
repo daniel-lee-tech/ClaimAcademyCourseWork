@@ -3,17 +3,16 @@ package models;
 import java.util.UUID;
 
 public class PhoneNumber {
-    enum NumberType {
-        CELL,
-        HOME,
-        FAX,
-        WORK
-    }
-
     private UUID id;
     private Person owner;
-    private double number;
+    private long number;
     private NumberType type;
+
+    public PhoneNumber(Person owner, long number, NumberType type) {
+        this.owner = owner;
+        this.number = number;
+        this.type = type;
+    }
 
     public Person getOwner() {
         return owner;
@@ -25,6 +24,16 @@ public class PhoneNumber {
 
     public double getNumber() {
         return number;
+    }
+
+    public String formattedPhoneNumber() {
+        String number = Long.toString(this.number);
+
+        String formattedNumber = "(" + (number.substring(0, 3) + ") ");
+        formattedNumber += number.substring(3, 6) + "-";
+        formattedNumber += number.substring(6);
+
+        return formattedNumber;
     }
 
     public void setNumber(int number) {

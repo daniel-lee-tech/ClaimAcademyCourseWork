@@ -1,41 +1,39 @@
 package models;
 
 
+import java.util.Arrays;
 import java.util.UUID;
 
-public class Person{
+public class Person {
     private UUID id;
-    private String firstName;
-    private String lastName;
+    private String fullName;
     private PhoneNumber[] phoneNumbers = {};
     private Address address;
 
-    public Person(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Person(String fullName) {
+        this.fullName = fullName;
         this.id = UUID.randomUUID();
     }
 
-    public UUID getId() { return id; }
+    public UUID getId() {
+        return id;
+    }
 
     public String getFirstName() {
-        return firstName;
+        return fullName.split(" ")[0];
     }
 
     public String getLastName() {
-        return lastName;
+        String[] fullNameArr = fullName.split(" ");
+        return fullNameArr[fullNameArr.length - 1];
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getFullName() {
-        return firstName + " " + lastName;
+        return this.fullName;
     }
 
     public PhoneNumber[] getPhoneNumbers() {
@@ -43,7 +41,7 @@ public class Person{
     }
 
     public boolean hasPhoneNumber(double phoneNumber) {
-        for (PhoneNumber number: this.phoneNumbers) {
+        for (PhoneNumber number : this.phoneNumbers) {
             if (number.getNumber() == phoneNumber) {
                 return true;
             }
@@ -52,15 +50,12 @@ public class Person{
         return false;
     }
 
-    public void outputInfo() {
-        System.out.println("=============");
-        System.out.println("Full Name: " + getFullName());
-        System.out.println("Address: " + address.getFullAddress());
-        System.out.println();
-    }
-
     public Address getAddress() {
         return this.address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public String getAddressString() {
@@ -79,29 +74,30 @@ public class Person{
         StringBuilder phoneNumbers = new StringBuilder();
 
         for (PhoneNumber number : getPhoneNumbers()) {
-            phoneNumbers.append(number.getType()).append(": ").append(number.getNumber()).append("\n");
+            phoneNumbers.append(number.getType()).append(": ").append(number.formattedPhoneNumber()).append("\n");
         }
 
         return phoneNumbers.toString();
     }
 
     public String infoSummary() {
-        StringBuilder output = new StringBuilder();
-        output
-                .append(this.getId())
-                .append("\n")
-                .append(this.getFullName())
-                .append("\n")
-                .append(this.getAddressString())
-                .append("\nPhone Numbers:\n")
-                .append(this.getAllNumbersAsString())
-                .append("\n")
-                .append("===========================================\n");
-
-        return output.toString();
+        return "\n" +
+                "\n" +
+                this.getFullName() +
+                "\n" +
+                this.getAddressString() +
+                "\nPhone Numbers:\n" +
+                this.getAllNumbersAsString() +
+                "\n" +
+                "===========================================\n";
     }
 
     public String briefSummary() {
         return this.getFullName() + " " + this.getAddressString();
+    }
+
+    public void addPhoneNumber(PhoneNumber phoneNumber) {
+        this.phoneNumbers = Arrays.copyOf(this.phoneNumbers, this.phoneNumbers.length + 1);
+        this.phoneNumbers[phoneNumbers.length - 1] = phoneNumber;
     }
 }
