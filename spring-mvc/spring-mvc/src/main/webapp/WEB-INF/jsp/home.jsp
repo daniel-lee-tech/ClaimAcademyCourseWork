@@ -23,16 +23,24 @@
     <h1>
         All students
     </h1>
-
-    <c:forEach items="${allStudents}" var="loopedStudent">
-        <div class="card">
-            firstName: ${loopedStudent.firstName}
-            <br>
-            lastName: ${loopedStudent.lastName}
-            <br>
-            email: ${loopedStudent.email}
-        </div>
-    </c:forEach>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach items="${allStudents}" var="loopedStudent">
+                <tr>
+                    <td>${loopedStudent.firstName}</td>
+                    <td>${loopedStudent.lastName}</td>
+                    <td>${loopedStudent.email}</td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
 </main>
 
 </body>

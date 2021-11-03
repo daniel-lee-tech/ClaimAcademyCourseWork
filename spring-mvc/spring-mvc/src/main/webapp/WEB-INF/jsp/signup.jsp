@@ -48,69 +48,59 @@
     </header>
 
     <main role="main" class="inner cover">
-
-        <%--@elvariable id="student" type=""--%>
-        <form:form method="post" action="/signup" modelAttribute="student">
+        <form:form class="w-50 mx-auto" method="post" action="/signup" modelAttribute="student">
 
             <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputFirstName">First Name</label>
-                    <form:input path="firstName" type="text" class="form-control" id="inputFirstName"/>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputLastName">Last Name</label>
-                    <form:input path="lastName" type="text" class="form-control" id="inputLastName"/>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="age">age</label>
-                    <form:input path="age" class="form-control"/>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputEmail4">Email</label>
-                    <form:input path="email" type="email" class="form-control" id="inputEmail4"/>
-                </div>
+                <label for="inputFirstName">First Name</label>
+                <form:input path="firstName" type="text" class="form-control" id="inputFirstName"/>
             </div>
 
             <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputPassword4">Password</label>
-                    <form:input path="password" type="password" class="form-control" id="inputPassword4"/>
-                </div>
+                <label for="inputLastName">Last Name</label>
+                <form:input path="lastName" type="text" class="form-control" id="inputLastName"/>
             </div>
-            <div class="form-group">
+
+            <div class="form-row">
+                <label for="age">age</label>
+                <form:input path="age" class="form-control"/>
+            </div>
+
+            <div class="form-row">
+                <label for="inputEmail4">Email</label>
+                <form:input path="email" type="email" class="form-control" id="inputEmail4"/>
+            </div>
+
+            <div class="form-row">
+                <label for="inputPassword4">Password</label>
+                <form:input path="password" type="password" class="form-control" id="inputPassword4"/>
+            </div>
+
+            <div class="form-row">
                 <label for="inputAddress">Street</label>
                 <form:input path="address.street" type="text" class="form-control" id="inputAddress"
                             placeholder="1234 Main St"/>
             </div>
+
             <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputCity">City</label>
-                    <form:input path="address.city" type="text" class="form-control" id="inputCity"/>
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="inputState">State</label>
-                    <form:select path="address.state" id="inputState" class="form-control">
-                        <option selected>Choose...</option>
-                        <option value="NY">New York</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="ME">Maine</option>
-                    </form:select>
-                </div>
-                <div class="form-group col-md-2">
-                    <label for="inputZip">Zip</label>
-                    <form:input path="address.zip" type="text" class="form-control" id="inputZip"/>
-                </div>
+                <label for="inputCity">City</label>
+                <form:input path="address.city" type="text" class="form-control" id="inputCity"/>
             </div>
-<%--            <div class="form-group">--%>
-<%--                <div class="form-check">--%>
-<%--                    <form:input path="check" class="form-check-input" type="checkbox" id="gridCheck"/>--%>
-<%--                    <label class="form-check-label" for="gridCheck">--%>
-<%--                        Check me out--%>
-<%--                    </label>--%>
-<%--                </div>--%>
-<%--            </div>--%>
+
+            <div class="form-row">
+                <label for="inputState">State</label>
+                <form:select path="address.state" id="inputState" class="form-control">
+                    <option selected>Choose...</option>
+                    <option value="NY">New York</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="ME">Maine</option>
+                </form:select>
+            </div>
+
+            <div class="form-row">
+                <label for="inputZip">Zip</label>
+                <form:input path="address.zip" type="text" class="form-control" id="inputZip"/>
+            </div>
+
             <button type="submit" class="btn btn-primary">Sign up</button>
         </form:form>
     </main>
