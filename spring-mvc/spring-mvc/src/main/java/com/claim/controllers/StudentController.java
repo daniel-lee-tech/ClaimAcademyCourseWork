@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -41,7 +42,11 @@ public class StudentController {
     }
 
     @PostMapping("/signup")
-    public String postSign(@ModelAttribute("student") Student student, Model model, HttpSession session) {
+    public String postSign(
+            @ModelAttribute("student") Student student,
+            Model model,
+            @RequestParam("number") int number) {
+
         model.addAttribute("newStudent", student);
         studentService.saveStudent(student);
         return "thankyou";

@@ -8,6 +8,7 @@ public class Student {
     private String age;
     private String password;
     private Address address;
+    private int number;
 
     public Student() {
     }
@@ -58,5 +59,13 @@ public class Student {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 }

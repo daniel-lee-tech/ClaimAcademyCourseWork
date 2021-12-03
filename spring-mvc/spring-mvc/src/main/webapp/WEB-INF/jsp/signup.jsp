@@ -101,6 +101,19 @@
                 <form:input path="address.zip" type="text" class="form-control" id="inputZip"/>
             </div>
 
+<%--            <div class="form-row">--%>
+<%--                <label for="number">Number</label>--%>
+<%--                <form:input path="number" placeholder="some number like 2" type="number" class="form-control" id="number"/>--%>
+<%--            </div>--%>
+
+
+            <div class="form-row">
+                <label for="number">Number without jsp</label>
+                <input onchange="document.querySelector('#hiddenInput').value = this.value" placeholder="some number like 2" type="number" class="form-control" id="number"/>
+            </div>
+
+            <form:input id="hiddenInput" type="hidden" path="number" />
+
             <button type="submit" class="btn btn-primary">Sign up</button>
         </form:form>
     </main>
